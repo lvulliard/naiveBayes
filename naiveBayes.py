@@ -13,6 +13,7 @@ Options:
 ################################### Imports ###################################
 from docopt import docopt
 import numpy as np
+import pickle
 
 ################################## Functions ##################################
 
