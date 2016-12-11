@@ -35,11 +35,15 @@ for i in xrange(nbFt):
 	evidence[i] = pd.crosstab(index = data[:,-1], columns = data[:,i], margins=True)
 
 # e.g feature 1, proba of each class for the value 0
-print evidence[1][0]
+# evidence[1][0]
 # e.g feature 2, proba of class 2 knowing value = 1
-print evidence[2][1][2]/float(evidence[2][1]["All"])
+# evidence[2][1][2]/float(evidence[2][1]["All"])
 
 # Counting the overall probabilities (prior)
+prior = pd.crosstab(index = data[:,-1], columns="count", margins=True)["count"]
+
+# e.g prior of class 1
+print prior[1]/float(prior["All"])
 
 # Prediction
 # Multiplying the probabilities for each column of the input
